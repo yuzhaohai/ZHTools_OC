@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHTools_OC'
-  s.version          = '0.1.0'
+  s.version          = '0.0.6'
   s.summary          = 'A short description of ZHTools_OC.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,10 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'ZHTools_OC/Classes/**/*'
+  s.source_files  = "ZHTools_OC/ZHTools_OC/*.{h,m}"
+  s.public_header_files = 'ZHTools_OC/ZHTools_OC/*.{h}'
+  s.requires_arc = true
+
   
   # s.resource_bundles = {
   #   'ZHTools_OC' => ['ZHTools_OC/Assets/*.png']
