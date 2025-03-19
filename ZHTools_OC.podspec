@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHTools_OC'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'A short description of ZHTools_OC.'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/yuzhaohai@126.com/ZHTools_OC'
+  s.homepage         = 'https://github.com/yuzhaohai/ZHTools_OC'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yuzhaohai@126.com' => 'yuzhaohai@126.com' }
-  s.source           = { :git => 'https://github.com/yuzhaohai@126.com/ZHTools_OC.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/yuzhaohai/ZHTools_OC.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
