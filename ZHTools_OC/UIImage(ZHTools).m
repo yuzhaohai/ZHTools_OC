@@ -7,7 +7,6 @@
 //
 
 #import "UIImage(ZHTools).h"
-#import "ZHAlertController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 #import "UIColor(ZHTools).h"
@@ -177,9 +176,6 @@
               [PHAssetChangeRequest creationRequestForAssetFromImage:self];
               
           } completionHandler:^(BOOL success, NSError * _Nullable error) {
-              
-              NSString *message = success ? @"保存成功" : @"保存失败";
-              [ZHAlertController alertTitle:@"提示" message:message cancleButtonTitle:@"确定"];
               
               if (completeBlock) {
                   completeBlock(@(success));

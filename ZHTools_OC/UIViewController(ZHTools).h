@@ -13,9 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (ZHTools)
 
-/// 是否是深色模式
-@property (assign, nonatomic) BOOL isDarkMode;
-
 - (void)goBack;
 
 @end

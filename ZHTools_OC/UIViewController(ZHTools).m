@@ -10,13 +10,6 @@
 
 @implementation UIViewController (ZHTools)
 
-- (BOOL)isDarkMode {
-    if(@available(iOS 13.0,*)){
-        return (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark);
-    }
-    return NO;
-}
-
 - (void)goBack {
     if (self.navigationController && ([self.navigationController.viewControllers indexOfObject:self] > 0)) {
         
