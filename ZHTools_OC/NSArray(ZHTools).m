@@ -98,18 +98,6 @@
     }]];
 }
 
-+ (NSArray *)zh_arrayFromData:(NSData *)data {
-    NSMutableArray *array;
-    if ([data isKindOfClass:[NSData class]]) {
-        array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    }
-    return array;
-}
-
-- (NSData *)zh_dataValue {
-    return [NSKeyedArchiver archivedDataWithRootObject:self];
-}
-
 /**
  Json 转 NSArray
  */

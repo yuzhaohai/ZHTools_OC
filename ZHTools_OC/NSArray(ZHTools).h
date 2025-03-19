@@ -49,16 +49,6 @@
 - (NSMutableArray *)zh_filter:(BOOL (^)(id object))block;
 
 /**
- NSArray 转 NSData , [NSKeyedArchiver archivedDataWithRootObject:self]
- */
-- (NSData *)zh_dataValue;
-
-/**
- NSData 转 NSArray , [NSKeyedUnarchiver unarchiveObjectWithData:data]
- */
-+ (NSArray *)zh_arrayFromData:(NSData *)data;
-
-/**
  Json 转 NSArray
  */
 + (NSArray *)zh_arrayFromJson:(NSString *)json;
