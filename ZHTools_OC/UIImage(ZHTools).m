@@ -7,10 +7,7 @@
 //
 
 #import "UIImage(ZHTools).h"
-#import <AVFoundation/AVFoundation.h>
-#import <Photos/Photos.h>
 #import "UIColor(ZHTools).h"
-#import <AssetsLibrary/AssetsLibrary.h>
 
 @implementation UIImage(ZHTools)
 
@@ -104,34 +101,6 @@
     return [UIImage imageWithContentsOfFile:[bundle pathForResource:name ofType:extension]];
 }
 
-+ (UIImage *)zh_imageFromVideoWithPath:(NSString *)path {
-    NSURL *url = [NSURL URLWithString:path];
-    if (!url || ![url scheme]) {
-        url = [NSURL fileURLWithPath:path];
-    }
-    
-    AVURLAsset *urlAsset = [AVURLAsset URLAssetWithURL:url options:nil];//
-    
-    //获取视频时长，单位：秒
-    
-    NSLog(@"%llu",urlAsset.duration.value/urlAsset.duration.timescale);
-    
-    AVAssetImageGenerator *generator = [AVAssetImageGenerator assetImageGeneratorWithAsset:urlAsset];
-    
-    
-    generator.appliesPreferredTrackTransform = YES;
-    
-    generator.maximumSize = CGSizeMake(1136, 640);
-    
-    NSError *error = nil;
-    
-    CGImageRef img = [generator copyCGImageAtTime:CMTimeMake(10, 10) actualTime:NULL error:&error];
-    
-    UIImage *image = [UIImage imageWithCGImage: img];
-    
-    return image;
-}
-
 + (UIImage *)zh_launchImage {
     CGSize viewSize = [UIScreen mainScreen].bounds.size;
     
@@ -162,44 +131,6 @@
     NSString *icon = [[infoPlist valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
     UIImage* image = [UIImage imageNamed:icon];
     return image;
-}
-
-- (void)zh_save2AlbumWitnCompleteBlock:(void(^)(id zhObject))completeBlock {
-    
-    PHAuthorizationStatus photoAuthorStatus = [PHPhotoLibrary authorizationStatus];
-    
-    switch (photoAuthorStatus) {
-      case PHAuthorizationStatusAuthorized:{
-          
-          [[PHPhotoLibrary sharedPhotoLibrary]performChanges:^{
-              
-              [PHAssetChangeRequest creationRequestForAssetFromImage:self];
-              
-          } completionHandler:^(BOOL success, NSError * _Nullable error) {
-              
-              if (completeBlock) {
-                  completeBlock(@(success));
-              }
-              
-          }];
-          
-          break;
-      }
-      case PHAuthorizationStatusNotDetermined:{
-          
-          [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-              
-              if (status == PHAuthorizationStatusAuthorized) {
-                  [self zh_save2AlbumWitnCompleteBlock:completeBlock];
-              }
-              
-          }];
-          break;
-          
-      }
-      default:
-          break;
-    }
 }
 
 - (UIImage*)zh_imageWithCornerRadius:(CGFloat)radius {

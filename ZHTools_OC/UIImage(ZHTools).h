@@ -9,37 +9,24 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-///图片翻转方向
-typedef NS_ENUM(NSUInteger, ZHImageFlipDirection) {
-    ///垂直
-    ZHImageFlipDirection_Vertical,
-    ///水平
-    ZHImageFlipDirection_Horizontal,
-};
-
 @interface UIImage(ZHTools)
 
-+ (UIImage *)zh_captureView:(UIView *)view;
++ (UIImage *)zh_captureView:(UIView *)view ;
 
-+ (UIImage *)zh_captureScrollView:(UIScrollView *)view;
++ (UIImage *)zh_captureScrollView:(UIScrollView *)view ;
 
-+ (UIImage *)zh_imageWithColor:(id)color;
-+ (UIImage *)zh_imageWithColor:(id)color size:(CGSize)size;
++ (UIImage *)zh_imageWithColor:(id)color ;
 
-///非缓存方式加载图片
-+ (UIImage *)zh_imageNamed:(NSString *)name;
-///非缓存方式加载图片
-+ (UIImage *)zh_imageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
++ (UIImage *)zh_imageWithColor:(id)color size:(CGSize)size ;
 
-+ (UIImage *)zh_imageFromVideoWithPath:(NSString *)path ;
++ (UIImage *)zh_imageNamed:(NSString *)name ;
 
-/// 启动图
-+ (UIImage *)zh_launchImage;
++ (UIImage *)zh_imageNamed:(NSString *)name inBundle:(NSBundle *)bundle ;
+
++ (UIImage *)zh_launchImage ;
 
 /// 获取应用图标
 + (UIImage *)zh_appIcon ;
-
-- (void)zh_save2AlbumWitnCompleteBlock:(void(^)(id zhObject))completeBlock ;
 
 - (UIImage*)zh_imageWithCornerRadius:(CGFloat)radius ;
 
