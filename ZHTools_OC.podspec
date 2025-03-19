@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'ZHTools_OC'
   s.summary      = 'Fast Fast Fast'
-  s.version      = '0.0.1'
+  s.version      = '0.0.3'
   s.license      = { :type => 'MIT' }
   s.authors      = { "born2try" => "yuzhaohai@126.com" }
   s.homepage     = 'https://github.com/yuzhaohai/ZHTools_OC'
