@@ -1,0 +1,6 @@
+framework module ZHTools_OC {
+  umbrella header "ZHTools_OC-umbrella.h"
+
+  export *
+  module * { export * }
+}

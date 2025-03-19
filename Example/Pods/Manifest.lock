@@ -1,0 +1,16 @@
+PODS:
+  - ZHTools_OC (0.1.0)
+
+DEPENDENCIES:
+  - ZHTools_OC (from `../`)
+
+EXTERNAL SOURCES:
+  ZHTools_OC:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZHTools_OC: 078574783900acef5d9551e28b1c383b552eaaba
+
+PODFILE CHECKSUM: 35c358bdf9281e12fb4b318f9279b2ad4ba01698
+
+COCOAPODS: 1.16.2
